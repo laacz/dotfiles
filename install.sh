@@ -11,6 +11,7 @@ ln -s $HOME/.dotfiles/.p10k.zsh $HOME/.p10k.zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k
 
 # Vim
-rm $HOME/.vimrc
+rm -rf $HOME/.vimrc $HOME/.vim
 ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/.dotfiles/.vim $HOME/.vim
 
