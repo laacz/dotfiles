@@ -1,4 +1,4 @@
-# Install
+# My dotfiles 
 
 It's that time. I've lived long enough without dotfiles.
 
