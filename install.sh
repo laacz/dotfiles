@@ -17,3 +17,6 @@ rm -rf $HOME/.vimrc $HOME/.vim
 ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
 ln -s $HOME/.dotfiles/.vim $HOME/.vim
 
+# git
+rm -rf $HOME/.gitconfig
+ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
