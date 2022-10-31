@@ -1,6 +1,6 @@
 # My dotfiles 
 
-It's that time. I've lived long enough without dotfiles.
+It's that time. I've lived long enough without dotfiles. Not a huge fan of mega customizations, but I do like to have a few things set up the way I like them.
 
 ```bash
 chsh -s $(which zsh)
