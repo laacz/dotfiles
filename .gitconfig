@@ -1,0 +1,11 @@
+[user]
+    email = laacz@laacz.lv
+    name = Kaspars Foigts
+[include]
+    path = .gitconfig.local
+[pull]
+    rebase = false
+[init]
+    defaultBranch = main
+[core]
+    autocrlf = true
