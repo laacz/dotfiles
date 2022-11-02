@@ -25,6 +25,7 @@ autoload -Uz compinit; compinit
 alias artisan="php ./artisan"
 alias phpunit="./vendor/bin/phpunit"
 alias sail="./vendor/bin/sail"
+alias cat="batcat"
 
 # :)
 PROMPT="$PROMPT"
