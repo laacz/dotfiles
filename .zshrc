@@ -17,15 +17,23 @@ plugins=(git)
 HISTSIZE=100000
 SAVEHIST=100000
 
-source $ZSH/oh-my-zsh.sh
-
 autoload zmv
 autoload -Uz compinit; compinit
+
+source $ZSH/oh-my-zsh.sh
 
 alias artisan="php ./artisan"
 alias phpunit="./vendor/bin/phpunit"
 alias sail="./vendor/bin/sail"
 alias cat="batcat"
+
+# exa aliases
+if command exa >/dev/null 2>&1
+then
+    alias ls='exa -albF --git'
+    alias ll='exa -lbF --git'
+    alias l='exa -albF --git'
+fi
 
 # :)
 PROMPT="$PROMPT"
@@ -41,4 +49,5 @@ export PATH
 
 # WSL2 and a specific VPN client issue
 if uname -r | grep -i -q 'microsoft' ; then sudo ip link set dev eth0 mtu 1420 ; fi
+
 
