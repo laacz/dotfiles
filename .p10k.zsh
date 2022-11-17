@@ -32,9 +32,9 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     os_icon                 # os identifier
+    context                 # user@hostname
     dir                     # current directory
     vcs                     # git status
-    context                 # user@hostname
     # prompt_char           # prompt symbol
   )
 
@@ -895,12 +895,7 @@
   # Custom icon.
   # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
-  if [ "$HOST" = 'zuze' ]; then
-      typeset -g POWERLEVEL9K_CONTEXT_PREFIX='%248Fwith ☃ '
-      typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=196
-  else
-      typeset -g POWERLEVEL9K_CONTEXT_PREFIX='%248Fwith '
-  fi
+  typeset -g POWERLEVEL9K_CONTEXT_PREFIX='%248F '
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
