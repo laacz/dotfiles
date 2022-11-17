@@ -33,6 +33,7 @@ then
     alias ls='exa -albF --git'
     alias ll='exa -lbF --git'
     alias l='exa -albF --git'
+    alias la='exa -a --git'
 fi
 
 # :)
