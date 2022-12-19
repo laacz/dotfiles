@@ -9,7 +9,7 @@ ZSHRC_DEBUG=0
 
 debuglog()
 {
-    if [[ $DEBUG -eq 1 ]]; then
+    if [[ $ZSHRC_DEBUG -eq 1 ]]; then
         echo $1
     fi
 }
