@@ -27,9 +27,12 @@ alias phpunit="./vendor/bin/phpunit"
 alias sail="./vendor/bin/sail"
 
 # cat replacement - bat/batcat (https://github.com/sharkdp/bat)
-if command batcat >/dev/null 2>&1
+if command batcat >/dev/null 2>&1 
 then
     alias cat="batcat"
+elif command bat >/dev/null 2>&1
+then
+    alias cat="bat"
 fi
 
 # ssh-agent stuff
