@@ -25,9 +25,20 @@ source $ZSH/oh-my-zsh.sh
 alias artisan="php ./artisan"
 alias phpunit="./vendor/bin/phpunit"
 alias sail="./vendor/bin/sail"
-alias cat="batcat"
 
-# exa aliases
+# cat replacement - bat/batcat (https://github.com/sharkdp/bat)
+if command batcat >/dev/null 2>&1
+then
+    alias cat="batcat"
+fi
+
+# ssh-agent stuff
+if command ssh-agent >/dev/null 2>&1
+then
+    eval `ssh-agent` >/dev/null 2>&1
+fi
+
+# ls replacement - exa and aliases (https://github.com/ogham/exa)
 if command exa >/dev/null 2>&1
 then
     alias ls='exa -albF --git'
@@ -50,5 +61,4 @@ export PATH
 
 # WSL2 and a specific VPN client issue
 if uname -r | grep -i -q 'microsoft' ; then sudo ip link set dev eth0 mtu 1420 ; fi
-
 
