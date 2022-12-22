@@ -45,14 +45,14 @@ alias sail="./vendor/bin/sail"
 
 debuglog "alias batcat/cat"
 # cat replacement - bat/batcat (https://github.com/sharkdp/bat)
-if command batcat >/dev/null 2>&1 
+if type batcat >/dev/null 2>&1 
 then
     debuglog "    appears to have batcat"
-    alias cat="batcat"
-elif command bat >/dev/null 2>&1
+    alias bat="batcat -p"
+elif type bat >/dev/null 2>&1
 then
     debuglog "    appears to have bat"
-    alias cat="bat"
+    alias bat="bat -p"
 fi
 
 debuglog "ssh-agent"
