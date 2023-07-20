@@ -90,3 +90,5 @@ debuglog "wsl2 vpn issue workaround"
 # WSL2 and a specific VPN client issue
 if uname -r | grep -i -q 'microsoft' ; then sudo ip link set dev eth0 mtu 1420 ; fi
 
+export HOMEBREW_NO_ANALYTICS=1
+
