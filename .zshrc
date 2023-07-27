@@ -45,10 +45,10 @@ alias sail="./vendor/bin/sail"
 
 debuglog "jetbrains on WSL2"
 if [ -d ~/.local/goland/ ]; then
-    alias goland="~/.local/goland/bin/goland.sh $1"
+    alias goland="~/.local/goland/bin/goland.sh >/dev/null 2>&1 &"
 fi
 if [ -d ~/.local/phpstorm/ ]; then
-    alias phpstorm="~/.local/phpstorm/bin/phpstorm.sh $1"
+    alias phpstorm="~/.local/phpstorm/bin/phpstorm.sh $1 >/dev/null 2>&1 &"
 fi
 
 debuglog "alias batcat/cat"
