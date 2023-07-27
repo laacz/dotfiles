@@ -43,6 +43,14 @@ alias phpunit="./vendor/bin/phpunit"
 debuglog "alias sail"
 alias sail="./vendor/bin/sail"
 
+debuglog "jetbrains on WSL2"
+if [ -d ~/.local/goland/ ]; then
+    alias goland="~/.local/goland/bin/goland.sh $1"
+fi
+if [ -d ~/.local/phpstorm/ ]; then
+    alias phpstorm="~/.local/phpstorm/bin/phpstorm.sh $1"
+fi
+
 debuglog "alias batcat/cat"
 # cat replacement - bat/batcat (https://github.com/sharkdp/bat)
 if type batcat >/dev/null 2>&1 
@@ -78,6 +86,7 @@ PROMPT="$PROMPT"
 
 PATH="$PATH:$HOME/.cargo/bin/"
 PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.config/composer/vendor/bin"
 PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin" 
 export PATH
