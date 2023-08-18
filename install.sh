@@ -22,5 +22,5 @@ rm -rf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 
 # tmux
-rm -rf $HOME/.tmux.conf
-ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
+rm -rf $HOME/.config/tmux
+ln -s $HOME/.dotfiles/.config/tmux $HOME/.config/tmux
