@@ -57,10 +57,12 @@ if type batcat >/dev/null 2>&1
 then
     debuglog "    appears to have batcat"
     alias bat="batcat -p"
+    alias cat="bat"
 elif type bat >/dev/null 2>&1
 then
     debuglog "    appears to have bat"
     alias bat="bat -p"
+    alias cat="bat"
 fi
 
 debuglog "ssh-agent"
