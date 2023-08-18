@@ -21,6 +21,10 @@ ln -s $HOME/.dotfiles/.vim $HOME/.vim
 rm -rf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 
+
 # tmux
+rm -rf $HOME/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 rm -rf $HOME/.config/tmux
 ln -s $HOME/.dotfiles/.config/tmux $HOME/.config/tmux
+
