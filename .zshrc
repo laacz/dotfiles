@@ -37,12 +37,13 @@ autoload -Uz compinit; compinit
 debuglog "source omz"
 source $ZSH/oh-my-zsh.sh
 
-debuglog "alias artisan"
+# This is Laravel related stuff
 alias artisan="php ./artisan"
-debuglog "alias phpunit"
 alias phpunit="./vendor/bin/phpunit"
-debuglog "alias sail"
 alias sail="./vendor/bin/sail"
+
+# Tailing structured logs in style: tail -f log | colorlog
+alias colorlog="bat -l json --paging=never"
 
 debuglog "jetbrains on WSL2"
 if [ -d ~/.local/goland/ ]; then
