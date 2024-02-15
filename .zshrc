@@ -91,6 +91,8 @@ PROMPT="$PROMPT"
 PATH="$PATH:$HOME/.cargo/bin/"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.config/composer/vendor/bin"
+# osx for some reason has other location
+PATH="$PATH:$HOME/.composer/vendor/bin"
 PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin" 
 export PATH
