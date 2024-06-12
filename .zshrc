@@ -41,6 +41,7 @@ source $ZSH/oh-my-zsh.sh
 alias artisan="php ./artisan"
 alias phpunit="./vendor/bin/phpunit"
 alias sail="./vendor/bin/sail"
+alias zed="open -a /Applications/Zed.app -n"
 
 # Tailing structured logs in style: tail -f log | colorlog
 alias colorlog="bat -l json --paging=never"
