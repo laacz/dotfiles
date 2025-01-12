@@ -56,7 +56,7 @@ fi
 
 debuglog "alias batcat/cat"
 # cat replacement - bat/batcat (https://github.com/sharkdp/bat)
-if type batcat >/dev/null 2>&1 
+if type batcat >/dev/null 2>&1
 then
     debuglog "    appears to have batcat"
     alias bat="batcat -p"
@@ -70,9 +70,10 @@ fi
 
 debuglog "ssh-agent"
 # ssh-agent stuff
-if command ssh-agent >/dev/null 2>&1
-then
-    eval `ssh-agent` >/dev/null 2>&1
+if command ssh-agent >/dev/null 2>&1; then
+    if ! ps -ef | grep -q "[s]sh-agent"; then
+        eval `ssh-agent` >/dev/null 2>&1
+    fi
 fi
 
 debuglog "alias exa"
@@ -95,7 +96,7 @@ PATH="$PATH:$HOME/.config/composer/vendor/bin"
 # osx for some reason has other location
 PATH="$PATH:$HOME/.composer/vendor/bin"
 PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
-PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin" 
+PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 export PATH
 
 debuglog "source p10k"
@@ -107,4 +108,3 @@ debuglog "wsl2 vpn issue workaround"
 if uname -r | grep -i -q 'microsoft' ; then sudo ip link set dev eth0 mtu 1420 ; fi
 
 export HOMEBREW_NO_ANALYTICS=1
-
