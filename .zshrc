@@ -46,10 +46,10 @@ alias sail="./vendor/bin/sail"
 
 debuglog "jetbrains on WSL2"
 if [ -d ~/.local/goland/ ]; then
-    alias goland="~/.local/goland/bin/goland.sh >/dev/null 2>&1 &"
+    alias goland="~/.local/goland/bin/goland"
 fi
 if [ -d ~/.local/phpstorm/ ]; then
-    alias phpstorm="~/.local/phpstorm/bin/phpstorm.sh $1 >/dev/null 2>&1 &"
+    alias phpstorm="~/.local/phpstorm/bin/phpstorm"
 fi
 
 debuglog "alias batcat/cat"
@@ -92,6 +92,8 @@ PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.config/composer/vendor/bin"
 PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin" 
+PATH="$PATH:$HOME/.local/goland/bin/:$HOME/.local/phpstorm/bin/"
+PATH="$PATH:$HOME/.zig"
 export PATH
 
 debuglog "source p10k"
@@ -104,3 +106,9 @@ if uname -r | grep -i -q 'microsoft' ; then sudo ip link set dev eth0 mtu 1420 ;
 
 export HOMEBREW_NO_ANALYTICS=1
 
+# fnm
+FNM_PATH="/home/laacz/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/laacz/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi

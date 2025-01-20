@@ -9,3 +9,13 @@
     defaultBranch = main
 [core]
 	autocrlf = input
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+    helper = !/usr/bin/gh auth git-credential
+[url "git@master-git.lmt.lv:"]
+    insteadOf = https://master-git.lmt.lv/
+[safe]
+	directory = /opt/exploitdb
