@@ -37,12 +37,14 @@ autoload -Uz compinit; compinit
 debuglog "source omz"
 source $ZSH/oh-my-zsh.sh
 
-debuglog "alias artisan"
+# This is Laravel related stuff
 alias artisan="php ./artisan"
-debuglog "alias phpunit"
 alias phpunit="./vendor/bin/phpunit"
-debuglog "alias sail"
 alias sail="./vendor/bin/sail"
+alias zed="open -a /Applications/Zed.app -n"
+
+# Tailing structured logs in style: tail -f log | colorlog
+alias colorlog="bat -l json --paging=never"
 
 debuglog "jetbrains on WSL2"
 if [ -d ~/.local/goland/ ]; then
@@ -54,7 +56,7 @@ fi
 
 debuglog "alias batcat/cat"
 # cat replacement - bat/batcat (https://github.com/sharkdp/bat)
-if type batcat >/dev/null 2>&1 
+if type batcat >/dev/null 2>&1
 then
     debuglog "    appears to have batcat"
     alias bat="batcat -p"
@@ -68,9 +70,10 @@ fi
 
 debuglog "ssh-agent"
 # ssh-agent stuff
-if command ssh-agent >/dev/null 2>&1
-then
-    eval `ssh-agent` >/dev/null 2>&1
+if command ssh-agent >/dev/null 2>&1; then
+    if ! ps -ef | grep -q "[s]sh-agent"; then
+        eval `ssh-agent` >/dev/null 2>&1
+    fi
 fi
 
 debuglog "alias exa"
@@ -90,6 +93,8 @@ PROMPT="$PROMPT"
 PATH="$PATH:$HOME/.cargo/bin/"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.config/composer/vendor/bin"
+# osx for some reason has other location
+PATH="$PATH:$HOME/.composer/vendor/bin"
 PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin" 
 PATH="$PATH:$HOME/.local/goland/bin/:$HOME/.local/phpstorm/bin/"
