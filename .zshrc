@@ -70,10 +70,20 @@ fi
 
 debuglog "ssh-agent"
 # ssh-agent stuff
-if command ssh-agent >/dev/null 2>&1; then
-    if ! ps -ef | grep -q "[s]sh-agent"; then
-        eval `ssh-agent` >/dev/null 2>&1
+SSH_AUTH_SOCK_DIR="$HOME/.ssh"
+SSH_AUTH_SOCK_FILE="$SSH_AUTH_SOCK_DIR/ssh-agent.sock"
+if [ -S "$SSH_AUTH_SOCK_FILE" ]; then
+    export SSH_AUTH_SOCK="$SSH_AUTH_SOCK_FILE"
+    ssh-add -l &>/dev/null
+    if [ $? -eq 2 ]; then
+        # Existing socket is invalid, remove it and start new agent
+        rm -f "$SSH_AUTH_SOCK_FILE"
+        eval $(ssh-agent -s -a "$SSH_AUTH_SOCK_FILE") >/dev/null
+        ssh-add ~/.ssh/id_rsa &>/dev/null
     fi
+else
+    eval $(ssh-agent -s -a "$SSH_AUTH_SOCK_FILE") >/dev/null
+    ssh-add ~/.ssh/id_rsa &>/dev/null
 fi
 
 debuglog "alias exa"
