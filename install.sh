@@ -31,7 +31,7 @@ ln -s $HOME/.dotfiles/.config/tmux $HOME/.config/tmux
 
 # ghostty
 # if on osx, ln ghostty.config to $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
   mkdir $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
   rm -rf $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
   ln -s $HOME/.dotfiles/ghostty.config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
