@@ -28,3 +28,8 @@ rm -rf $HOME/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 rm -rf $HOME/.config/tmux
 ln -s $HOME/.dotfiles/.config/tmux $HOME/.config/tmux
+
+# ghostty
+# if on osx, ln ghostty.config to $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
+rm -rf $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
+ln -s $HOME/.dotfiles/ghostty.config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
