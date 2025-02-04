@@ -41,7 +41,6 @@ source $ZSH/oh-my-zsh.sh
 alias artisan="php ./artisan"
 alias phpunit="./vendor/bin/phpunit"
 alias sail="./vendor/bin/sail"
-alias zed="open -a /Applications/Zed.app -n"
 
 # Tailing structured logs in style: tail -f log | colorlog
 alias colorlog="bat -l json --paging=never"
@@ -126,4 +125,10 @@ FNM_PATH="/home/laacz/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/home/laacz/.local/share/fnm:$PATH"
   eval "`fnm env`"
+fi
+
+if [ "$(uname)" = "Darwin" ]; then
+    alias zed="open -a /Applications/Zed.app -n"
+else
+    alias zed="WAYLAND_DISPLAY='' zed --foreground"
 fi
