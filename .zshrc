@@ -128,7 +128,7 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 if [ "$(uname)" = "Darwin" ]; then
-    alias zed="open -a /Applications/Zed.app -n"
+    #alias zed="open -a /Applications/Zed.app -n"
 else
     alias zed="WAYLAND_DISPLAY='' zed --foreground"
 fi
