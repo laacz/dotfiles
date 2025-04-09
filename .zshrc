@@ -95,6 +95,11 @@ then
     alias la='exa -a --git'
 fi
 
+if command nvim >/dev/null 2>&1
+then
+    alias vim='nvim'
+fi
+
 debuglog "prompt and path"
 # :)
 PROMPT="$PROMPT"
@@ -105,7 +110,7 @@ PATH="$PATH:$HOME/.config/composer/vendor/bin"
 # osx for some reason has other location
 PATH="$PATH:$HOME/.composer/vendor/bin"
 PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
-PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin" 
+PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 PATH="$PATH:$HOME/.local/goland/bin/:$HOME/.local/phpstorm/bin/"
 PATH="$PATH:$HOME/.zig"
 export PATH

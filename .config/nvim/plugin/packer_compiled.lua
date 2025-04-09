@@ -88,10 +88,20 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/laacz/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["remember.nvim"] = {
+    config = { " require('remember') " },
+    loaded = true,
+    path = "/Users/laacz/.local/share/nvim/site/pack/packer/start/remember.nvim",
+    url = "https://github.com/vladdoster/remember.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: remember.nvim
+time([[Config for remember.nvim]], true)
+ require('remember') 
+time([[Config for remember.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

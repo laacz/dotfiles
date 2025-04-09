@@ -6,6 +6,8 @@ require('packer').startup(function(use)
   }
   -- other plugins...
   use { "catppuccin/nvim", as = "catppuccin" }
+  use({ 'vladdoster/remember.nvim', config = [[ require('remember') ]] })
+
 end)
 
 
@@ -65,8 +67,38 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require("catppuccin").setup({
-	flavour = "mocha", -- latte, frappe, macchiato, mocha
+	flavour = "macchiato", -- latte, frappe, macchiato, mocha
 })
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme  "catppuccin"
+-- Enable case-insensitive searching with smart behavior
+vim.opt.hlsearch = true
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.autoindent = true
+-- Enable relative line numbers with current line showing absolute number
+vim.opt.number = true        -- Show current line number
+vim.opt.relativenumber = true -- Show relative line numbers
+vim.opt.showmatch = true
+
+vim.opt.wildmenu=true
+vim.optwildmode="list:longest,full"
+
+
+-- Use relative numbers in normal mode, absolute in insert mode
+vim.api.nvim_create_autocmd("InsertEnter", {
+  callback = function()
+    vim.opt.relativenumber = false
+  end
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  callback = function()
+    vim.opt.relativenumber = true
+  end
+})
+
+
+vim.cmd("set ignorecase smartcase")
 
