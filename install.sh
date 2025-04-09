@@ -36,3 +36,5 @@ if [ "$(uname)" = "Darwin" ]; then
   rm -rf $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
   ln -s $HOME/.dotfiles/ghostty.config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
 fi
+
+ln -s $HOME/.dotfiles/.config/nvim $HOME/.config/nvim
