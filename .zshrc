@@ -95,8 +95,7 @@ then
     alias la='exa -a --git'
 fi
 
-if command nvim >/dev/null 2>&1
-then
+if type nvim >/dev/null 2>&1; then
     alias vim='nvim'
 fi
 
