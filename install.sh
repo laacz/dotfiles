@@ -38,3 +38,5 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 ln -s $HOME/.dotfiles/.config/nvim $HOME/.config/nvim
+ln -s $HOME/.dotfiles/.mutagen.yml ~/.mutagen.yml
+
