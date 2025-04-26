@@ -133,6 +133,9 @@ fi
 
 if [ "$(uname)" = "Darwin" ]; then
     #alias zed="open -a /Applications/Zed.app -n"
+    if [ -d "/opt/homebrew/opt/libpq" ]; then
+        PATH="$PATH:/opt/homebrew/opt/libpq/bin"
+    fi
 else
     alias zed="WAYLAND_DISPLAY='' zed --foreground"
 fi
