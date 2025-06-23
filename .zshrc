@@ -139,3 +139,6 @@ if [ "$(uname)" = "Darwin" ]; then
 else
     alias zed="WAYLAND_DISPLAY='' zed --foreground"
 fi
+
+# opencode
+export PATH=/Users/laacz/.opencode/bin:$PATH
