@@ -1,0 +1,11 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-pageup": "pane::ActivatePreviousItem",
+      "ctrl-pagedown": "pane::ActivateNextItem",
+      "pageup": "editor::MovePageUp",
+      "pagedown": "editor::MovePageDown"
+    }
+  }
+]

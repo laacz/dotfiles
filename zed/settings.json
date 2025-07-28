@@ -1,0 +1,72 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "context_servers": {
+    "mcp-server-context7": {
+      "source": "extension",
+      "settings": {
+        "default_minimum_tokens": "10000"
+      }
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet"
+    },
+    "always_allow_tool_actions": true,
+    "profiles": {
+      "copilot": {
+        "name": "Copilot",
+        "tools": {},
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-opus-4-thinking"
+    }
+  },
+  "vim_mode": false,
+  "theme": "Catppuccin Macchiato",
+  "minimap": {
+    "show": "always"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "format_on_save": "on",
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "terminal": {
+    "font_family": "FiraCode Nerd Font Mono"
+  },
+  "soft_wrap": "editor_width",
+  "tabs": { "file_icons": true },
+  "languages": {
+    "Plain Text": {
+      "show_edit_predictions": false
+    },
+    "HTML": {
+      "prettier": {
+        "printWidth": 120
+      }
+    },
+    "PHP": {
+      "format_on_save": "off"
+    }
+  }
+}
