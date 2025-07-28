@@ -40,3 +40,7 @@ fi
 ln -s $HOME/.dotfiles/.config/nvim $HOME/.config/nvim
 ln -s $HOME/.dotfiles/.mutagen.yml ~/.mutagen.yml
 
+mkdir $HOME/.config/zed/
+ln -s $HOME/.dotfiles/zed/settings.json ~/.config/zed/settings.json
+ln -s $HOME/.dotfiles/zed/keymap.json ~/.config/zed/keymap.json
+
