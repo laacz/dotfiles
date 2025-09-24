@@ -139,3 +139,17 @@ if [ "$(uname)" = "Darwin" ]; then
 else
     alias zed="WAYLAND_DISPLAY='' zed --foreground"
 fi
+
+alias claude="/home/laacz/.claude/local/claude"
+
+# set up fzf shell integration
+if type fzf >/dev/null 2>&1
+then
+    source <(fzf --zsh)
+fi
+
+# set up fd-find as fd
+if type fdfind >/dev/null 2>&1
+then
+    ln -s $(which fdfind) ~/.local/bin/fd
+fi
