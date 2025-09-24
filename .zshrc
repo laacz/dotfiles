@@ -148,8 +148,11 @@ then
     source <(fzf --zsh)
 fi
 
-# set up fd-find as fd
+# set up fd-find as fd, don't link if already exists
 if type fdfind >/dev/null 2>&1
 then
-    ln -s $(which fdfind) ~/.local/bin/fd
+    if ! type fd >/dev/null 2>&1
+    then
+        alias fd=fdfind
+    fi
 fi
