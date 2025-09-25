@@ -174,11 +174,15 @@
   fi
 
   # Default background color.
-  #typeset -g POWERLEVEL9K_BACKGROUND=238
   typeset -g POWERLEVEL9K_BACKGROUND=238
   # root
   if [[ $EUID -eq 0 ]]; then
     typeset -g POWERLEVEL9K_BACKGROUND=52
+  fi
+
+  # on localhost (not ssh) another background
+  if [[ -z $SSH_CONNECTION ]]; then
+    typeset -g POWERLEVEL9K_BACKGROUND=0
   fi
 
   # Separator between same-color segments on the left.
