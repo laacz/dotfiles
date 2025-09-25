@@ -175,10 +175,6 @@
 
   # Default background color.
   typeset -g POWERLEVEL9K_BACKGROUND=238
-  # root
-  if [[ $EUID -eq 0 ]]; then
-    typeset -g POWERLEVEL9K_BACKGROUND=52
-  fi
 
   # on localhost (not ssh) another background
   if [[ -z $SSH_CONNECTION ]]; then
@@ -943,7 +939,7 @@
 
   ##################################[ context: user@hostname ]##################################
   # Context color when running with privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=178
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=9
   # Context color in SSH without privileges.
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=180
   # Default context color (no privileges, no SSH).
