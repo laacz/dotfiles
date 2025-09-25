@@ -174,7 +174,12 @@
   fi
 
   # Default background color.
+  #typeset -g POWERLEVEL9K_BACKGROUND=238
   typeset -g POWERLEVEL9K_BACKGROUND=238
+  # root
+  if [[ $EUID -eq 0 ]]; then
+    typeset -g POWERLEVEL9K_BACKGROUND=52
+  fi
 
   # Separator between same-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='%246F\uE0B1'
