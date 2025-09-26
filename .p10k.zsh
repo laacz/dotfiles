@@ -176,11 +176,6 @@
   # Default background color.
   typeset -g POWERLEVEL9K_BACKGROUND=238
 
-  # on localhost (not ssh) another background
-  if [[ -z $SSH_CONNECTION ]]; then
-    typeset -g POWERLEVEL9K_BACKGROUND=0
-  fi
-
   # Separator between same-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='%246F\uE0B1'
   # Separator between same-color segments on the right.
@@ -1744,6 +1739,13 @@
   # really need it.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 
+
+  # on localhost (not ssh) another background
+  if [[ -z $SSH_CONNECTION ]]; then
+    typeset -g POWERLEVEL9K_BACKGROUND=0
+    typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=8
+  fi
+
   # If p10k is already loaded, reload configuration.
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
   (( ! $+functions[p10k] )) || p10k reload
@@ -1752,5 +1754,7 @@
 # Tell `p10k configure` which file it should overwrite.
 typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
+
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
