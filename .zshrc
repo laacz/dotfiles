@@ -140,8 +140,6 @@ else
     alias zed="WAYLAND_DISPLAY='' zed --foreground"
 fi
 
-alias claude="/Users/laacz/.local/bin/claude"
-
 # set up fzf shell integration
 if type fzf >/dev/null 2>&1
 then
