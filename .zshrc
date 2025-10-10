@@ -154,7 +154,3 @@ then
         alias fd=fdfind
     fi
 fi
-
-
-
-alias claude="~/.claude/local/claude"
