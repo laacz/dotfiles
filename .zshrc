@@ -37,6 +37,11 @@ autoload -Uz compinit; compinit
 debuglog "source omz"
 source $ZSH/oh-my-zsh.sh
 
+# zoxide
+if type zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+fi
+
 # This is Laravel related stuff
 alias artisan="php ./artisan"
 alias phpunit="./vendor/bin/phpunit"
