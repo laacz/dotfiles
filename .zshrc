@@ -159,3 +159,5 @@ then
         alias fd=fdfind
     fi
 fi
+
+# let's try living without a pager (`git log`, `
