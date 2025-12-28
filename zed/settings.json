@@ -7,9 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "prettier": {
+    "allowed": false
+  },
+  "edit_predictions": {
+    "mode": "subtle"
+  },
   "context_servers": {
     "mcp-server-context7": {
-      "source": "extension",
       "settings": {
         "default_minimum_tokens": "10000"
       }
@@ -35,11 +40,11 @@
     "default_profile": "ask",
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-thinking"
+      "model": "claude-opus-4-1"
     }
   },
   "vim_mode": false,
-  "theme": "Catppuccin Macchiato",
+  "theme": "Tokyo Night",
   "minimap": {
     "show": "always"
   },
@@ -55,7 +60,9 @@
     "font_family": "FiraCode Nerd Font Mono"
   },
   "soft_wrap": "editor_width",
-  "tabs": { "file_icons": true },
+  "tabs": {
+    "file_icons": true
+  },
   "languages": {
     "Plain Text": {
       "show_edit_predictions": false
@@ -66,7 +73,17 @@
       }
     },
     "PHP": {
-      "format_on_save": "off"
+      "format_on_save": "off",
+      "tab_size": 4
+    },
+    "JavaScript": {
+      "tab_size": 4
+    },
+    "C": {
+      "tab_size": 4
+    },
+    "JSON": {
+      "tab_size": 4
     }
   }
 }
