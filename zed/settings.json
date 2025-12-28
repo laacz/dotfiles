@@ -37,14 +37,10 @@
         "context_servers": {}
       }
     },
-    "default_profile": "ask",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-opus-4-1"
-    }
+    "default_profile": "ask"
   },
   "vim_mode": false,
-  "theme": "Tokyo Night",
+  "theme": "Catppuccin Macchiato",
   "minimap": {
     "show": "always"
   },
@@ -83,7 +79,12 @@
       "tab_size": 4
     },
     "JSON": {
-      "tab_size": 4
+      "tab_size": 2,
+      "format_on_save": "off"
+    },
+    "JSONC": {
+      "tab_size": 2,
+      "format_on_save": "on"
     }
   }
 }
