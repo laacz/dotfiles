@@ -160,6 +160,8 @@ then
     fi
 fi
 
+alias lg=lazygit
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # bun completions
