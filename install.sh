@@ -22,7 +22,6 @@ ln -s $HOME/.dotfiles/.vim $HOME/.vim
 rm -rf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 
-
 # tmux
 rm -rf $HOME/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
@@ -43,4 +42,3 @@ ln -s $HOME/.dotfiles/.mutagen.yml ~/.mutagen.yml
 mkdir $HOME/.config/zed/
 ln -s $HOME/.dotfiles/zed/settings.json ~/.config/zed/settings.json
 ln -s $HOME/.dotfiles/zed/keymap.json ~/.config/zed/keymap.json
-

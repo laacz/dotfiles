@@ -37,6 +37,11 @@ autoload -Uz compinit; compinit
 debuglog "source omz"
 source $ZSH/oh-my-zsh.sh
 
+# zoxide
+if type zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+fi
+
 # This is Laravel related stuff
 alias artisan="php ./artisan"
 alias phpunit="./vendor/bin/phpunit"
@@ -157,10 +162,12 @@ fi
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
+alias lg=lazygit
 
-# bun completions
-[ -s "/home/laacz/.bun/_bun" ] && source "/home/laacz/.bun/_bun"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+# bun completions
+[ -s "/home/laacz/.bun/_bun" ] && source "/home/laacz/.bun/_bun"
