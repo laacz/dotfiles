@@ -154,3 +154,13 @@ then
         alias fd=fdfind
     fi
 fi
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
+
+# bun completions
+[ -s "/home/laacz/.bun/_bun" ] && source "/home/laacz/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
