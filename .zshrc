@@ -124,8 +124,14 @@ debuglog "source p10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 debuglog "wsl2 vpn issue workaround"
-# WSL2 and a specific VPN client issue
-if uname -r | grep -i -q 'microsoft' ; then sudo ip link set dev eth0 mtu 1420 ; fi
+# WSL2 and a specific VPN client issue - set MTU on default route interface
+if uname -r | grep -i -q 'microsoft'; then
+    _default_iface=$(ip -4 route show default 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="dev") {print $(i+1); exit}}')
+    if [[ -n "$_default_iface" ]]; then
+        sudo ip link set dev "$_default_iface" mtu 1420
+    fi
+    unset _default_iface
+fi
 
 export HOMEBREW_NO_ANALYTICS=1
 
