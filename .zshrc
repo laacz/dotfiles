@@ -128,7 +128,7 @@ debuglog "wsl2 vpn issue workaround"
 if uname -r | grep -i -q 'microsoft'; then
     _default_iface=$(ip -4 route show default 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="dev") {print $(i+1); exit}}')
     if [[ -n "$_default_iface" ]]; then
-        sudo ip link set dev "$_default_iface" mtu 1420
+        sudo ip link set dev "$_default_iface" mtu 1000
     fi
     unset _default_iface
 fi
