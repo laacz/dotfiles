@@ -177,3 +177,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # bun completions
 [ -s "/home/laacz/.bun/_bun" ] && source "/home/laacz/.bun/_bun"
+
+# opencode
+export PATH=/home/laacz/.opencode/bin:$PATH
