@@ -24,6 +24,10 @@
     "edit_prediction_provider": "zed"
   },
   "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
     "inline_assistant_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet"
@@ -37,7 +41,7 @@
         "context_servers": {}
       }
     },
-    "default_profile": "ask"
+    "default_profile": "write"
   },
   "vim_mode": false,
   "theme": "Catppuccin Macchiato",

@@ -58,3 +58,12 @@ ln -s "$HOME/.dotfiles/zed/keymap.json" "$HOME/.config/zed/keymap.json"
 # psqlrc
 rm -rf "$HOME/.psqlrc"
 ln -s "$HOME/.dotfiles/.psqlrc" "$HOME/.psqlrc"
+
+# Claude Code
+for FFF in "$HOME/.dotfiles/claude"/*
+do
+    FFF=${FFF##*/}
+    echo "Claude Code: copying $FFF"
+    rm -rf "$HOME/.claude/$FFF"
+    ln -s "$HOME/.dotfiles/claude/$FFF" "$HOME/.claude/$FFF"
+done
