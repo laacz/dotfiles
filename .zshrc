@@ -104,6 +104,16 @@ if type nvim >/dev/null 2>&1; then
     alias vim='nvim'
 fi
 
+# Set EDITOR to the first available editor
+for _editor in nvim vim vi nano; do
+    if command -v "$_editor" >/dev/null 2>&1; then
+        export EDITOR="$_editor"
+        export VISUAL="$_editor"
+        break
+    fi
+done
+unset _editor
+
 debuglog "prompt and path"
 # :)
 PROMPT="$PROMPT"
