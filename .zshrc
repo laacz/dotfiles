@@ -31,8 +31,6 @@ SAVEHIST=100000
 
 debuglog "autoload zmv"
 autoload zmv
-debuglog "compinit"
-autoload -Uz compinit; compinit
 
 debuglog "source omz"
 source $ZSH/oh-my-zsh.sh
@@ -92,7 +90,7 @@ fi
 
 debuglog "alias exa"
 # ls replacement - exa and aliases (https://github.com/ogham/exa)
-if command exa >/dev/null 2>&1
+if command -v exa >/dev/null 2>&1
 then
     alias ls='exa -albF --git'
     alias ll='exa -lbF --git'
