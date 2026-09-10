@@ -5,6 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# WSL: park Windows PATH entries during startup. Every lookup for a missing
+# command stats all /mnt/c dirs over 9p (~180ms each). Re-appended at the bottom.
+_win_path=(${(M)path:#/mnt/*})
+path=(${path:#/mnt/*})
+
 ZSHRC_DEBUG=0
 PROMPT_EOL_MARK=""
 
@@ -188,3 +193,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=/home/laacz/.opencode/bin:$PATH
+
+# Restore Windows PATH entries (see top of file)
+path+=($_win_path); unset _win_path
