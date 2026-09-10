@@ -5,10 +5,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# WSL: park Windows PATH entries during startup. Every lookup for a missing
-# command stats all /mnt/c dirs over 9p (~180ms each). Re-appended at the bottom.
+# WSL: keep Windows dirs out of PATH. system32 alone has ~5000 entries over 9p,
+# so every command-hash rebuild (any PATH change, first prompt, any typo) costs
+# ~0.5s. Windows exes still run through the fallback below, just without tab
+# completion of their names.
 _win_path=(${(M)path:#/mnt/*})
 path=(${path:#/mnt/*})
+command_not_found_handler() {
+  local d
+  for d in $_win_path; do
+    [[ -x "$d/$1" ]] && { "$d/$1" "${@:2}"; return }
+  done
+  print -u2 "zsh: command not found: $1"
+  return 127
+}
 
 ZSHRC_DEBUG=0
 PROMPT_EOL_MARK=""
@@ -193,6 +203,3 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=/home/laacz/.opencode/bin:$PATH
-
-# Restore Windows PATH entries (see top of file)
-path+=($_win_path); unset _win_path
